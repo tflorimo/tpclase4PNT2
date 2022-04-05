@@ -13,50 +13,32 @@
             <div class="col-6">
                 <form>
                     <div class="mb-3">
-                        <label for="id" class="form-label">ID</label>
-                        <input type="text" class="form-control" id="id"><br>
-                        <label for="tipo" class="form-label">Tipo</label>
-                        <input type="text" class="form-control" id="tipo">
+                        <label for="busqueda_nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="busqueda_nombre"><br>
+                        <label for="busqueda_especies" class="form-label">Especies</label>
+                        <input type="text" class="form-control" id="busqueda_especies"><br>
+                        <label for="cars">Seleccione un estado:</label>
+                        <select class="form-select" name="status" id="status" onchange="searchByStatus()">
+                            <option value="alive">Alive</option>
+                            <option value="unknown">Unknown</option>
+                            <option value="dead">Dead</option>
+                        </select>
                     </div>
                     <div class="d-grid gap-2">
-                        <button class="btn btn-info text-white" onclick="search()" type="button">Buscar</button>
+                        <button class="btn btn-info text-white" onclick="searchByEspecies()" type="button">Buscar</button>
                         <button class="btn btn-info text-white" onclick="mostrar()" type="button">Limpiar</button>
-                        <button class="btn btn-info text-white" onclick="showAdd()" type="button">Agregar un nuevo elemento</button>
                     </div>
                 </form>
             </div>
         </div>
         <div id="row" class="row mt-4">
         </div>
-        <div id="formAltas" class="row justify-content-center" style="display:none;">
-            <div class="col-6">
-                <form id="valuesForm">
-                    <div class="mb-3">
-                        <label for="idAdd" class="form-label">ID</label>
-                        <input type="text" class="form-control" id="idAdd">
-
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre">
-
-                        <label for="edad" class="form-label">Edad</label>
-                        <input type="text" class="form-control" id="edad">
-
-                        <label for="lugar_nacimiento" class="form-label">Lugar de nacimiento</label>
-                        <input type="text" class="form-control" id="lugar_nacimiento">
-
-                        <label for="imagen" class="form-label">Imagen (URL)</label>
-                        <input type="text" class="form-control" id="imagen">
-
-                        <label for="tipoAdd" class="form-label">Tipo</label>
-                        <input type="text" class="form-control" id="tipoAdd">
-                    </div>
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-info text-white" style="background-color: red;display: none;" id="indicadorRepetido" onclick="showAdd()" type="button">El ID está repetido, haga clic aquí para volver a cargar el elemento</button>
-                        <button class="btn btn-info text-white" style="background-color: lightgreen;" id="botonDeCarga" onclick="addNew()" type="button">Agregar este elemento</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination" id="paginator">
+                <li class="page-item"><a class="page-link" href="javascript:paginaAnterior()">Página anterior</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:paginaSiguiente()">Siguiente página</a></li>
+            </ul>
+        </nav>
     </div>
     <script src="../JS/tp.js"></script>
 </body>
